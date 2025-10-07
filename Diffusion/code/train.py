@@ -14,7 +14,7 @@ from DDPM import *
 @dataclass
 class BaseConfig:
     DEVICE = get_default_device()
-    DATASET = "Cifar-10"  # "MNIST", "Cifar-10", "Cifar-100", "Flowers"
+    DATASET = "MNIST"  # "MNIST", "Cifar-10", "Cifar-100", "Flowers"
 
     # Path to log inference images and save checkpoints
     root = "./Logs_Checkpoints"
@@ -30,7 +30,7 @@ class BaseConfig:
 class TrainingConfig:
     TIMESTEPS = 1000  # Define number of diffusion timesteps
     IMG_SHAPE = (1, 32, 32) if BaseConfig.DATASET == "MNIST" else (3, 32, 32)
-    NUM_EPOCHS = 2500
+    NUM_EPOCHS = 10
     BATCH_SIZE = 128
     LR = 2e-4
 
